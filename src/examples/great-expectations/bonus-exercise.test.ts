@@ -8,12 +8,17 @@ import { KanbanBoard, defaultStatuses } from '$lib/kanban-board';
  */
 
 describe('Kanban Board', () => {
-  it.todo(
+  it(
     'should create a board with a title and an array of default statuses',
     () => {
       const title = 'Important Things';
       const board = new KanbanBoard(title);
 
+      expect(board).toEqual({
+        title: expect.any(String),
+        statuses: expect.arrayContaining(defaultStatuses),
+        url: expect.any(String),
+      });
       expect.hasAssertions();
     },
   );
