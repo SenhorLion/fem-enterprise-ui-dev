@@ -23,7 +23,7 @@ describe('Kanban Board', () => {
     },
   );
 
-  it.todo('add a status to a board using #addStatus', () => {
+  it('add a status to a board using #addStatus', () => {
     const title = 'Important Things';
     const status = 'Verifying';
     const board = new KanbanBoard(title);
@@ -34,6 +34,7 @@ describe('Kanban Board', () => {
 
     // We don't really care what else is in board.statuses.
     // We just want to verify that it has the new status.
+    expect(board.statuses).toContain(status);
   });
 
   it.todo('have a URL property that has the title in kebab case', () => {
